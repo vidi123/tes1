@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kalkulator murni 1</title>
+    <style>
+        body{
+            background-color: black;
+            font-family: cursive;
+        }
+        .container{
+            width: 40%;
+            height: 450px;
+            border: 1px solid gold;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .display{
+            width: 99%;
+            height: 80px;
+            margin: 3px 3px 7px;
+            background-color: rgb(22, 17, 17);
+            border-radius: 5px;
+            border: 1px solid goldenrod;
+            color: goldenrod;
+            font-size: 35px;
+            padding: 15px;
+            box-sizing: border-box;
+            text-align: end;
+        }
+        .tombol{
+            display: flex;
+            font-size: 25px;
+        }
+        .tombol div{
+            flex-basis: 25%;
+            height: 80px;
+            margin: 5px;
+            border: 1px solid goldenrod;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: goldenrod;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .tombol div:hover{
+            background-color: rgb(15, 13, 13);
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="display"></div>
+        <div class="tombol-container">
+            <div class="tombol satu">
+                <div class="angka">7</div>
+                <div class="angka">8</div>
+                <div class="angka">9</div>
+                <div id="operator">x</div>
+            </div>
+            <div class="tombol dua">
+                <div class="angka">4</div>
+                <div class="angka">5</div>
+                <div class="angka">6</div>
+                <div id="operator">-</div>
+            </div>
+            <div class="tombol tiga">
+                <div class="angka">1</div>
+                <div class="angka">2</div>
+                <div class="angka">3</div>
+                <div id="operator">:</div>
+            </div>
+            <div class="tombol empat">
+                <div class="angka">0</div>
+                <div id="clear">c</div>
+                <div id="operator">/</div>
+                <div id="hasil">=</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // USE YOUR BRAIN...
+        // STAY DETERMINED...
+        // NO PUSING NO TIDUR...
+
+        // Display
+        let display = document.querySelector('.display');
+        display.innerHTML = 0;
+
+
+        // Tombol
+        let angka = document.querySelectorAll('.angka');
+        
+        for(let i = 0; i < angka.length; i++){
+            angka[i].addEventListener('click', function(){
+                let angkanya = document.querySelectorAll('.angka')[i].textContent;
+                display.innerHTML = angkanya; 
+            });
+        }
+
+    </script>
+</body>
+</html>
