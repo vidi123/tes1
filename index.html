@@ -60,24 +60,24 @@
                 <div class="angka">7</div>
                 <div class="angka">8</div>
                 <div class="angka">9</div>
-                <div id="operator">x</div>
+                <div class="operator">x</div>
             </div>
             <div class="tombol dua">
                 <div class="angka">4</div>
                 <div class="angka">5</div>
                 <div class="angka">6</div>
-                <div id="operator">-</div>
+                <div class="operator">-</div>
             </div>
             <div class="tombol tiga">
                 <div class="angka">1</div>
                 <div class="angka">2</div>
                 <div class="angka">3</div>
-                <div id="operator">:</div>
+                <div class="operator">+</div>
             </div>
             <div class="tombol empat">
                 <div class="angka">0</div>
                 <div id="clear">c</div>
-                <div id="operator">/</div>
+                <div class="operator">/</div>
                 <div id="hasil">=</div>
             </div>
         </div>
@@ -98,10 +98,31 @@
         
         for(let i = 0; i < angka.length; i++){
             angka[i].addEventListener('click', function(){
-                let angkanya = document.querySelectorAll('.angka')[i].textContent;
-                display.innerHTML = angkanya; 
+                let angkanya = angka[i].textContent;
+                display.innerHTML += angkanya; 
             });
         }
+        
+        let operator = document.querySelectorAll('.operator');
+
+        for(let x = 0; x < operator.length; x++) {
+            operator[x].addEventListener('click', function(){
+                let opnya = operator[x].textContent;
+                display.innerHTML += opnya;
+            });
+        }
+
+        // Clear
+        let clear = document.getElementById('clear');
+        clear.addEventListener('click', function(){
+            display.innerHTML = 0;
+        });
+        // for(let x = 0; x < angka.length; x++){
+        //     angka[x].addEventListener('click', function(){
+        //         let angkanya2 = document.querySelectorAll('.angka')[x].textContent;
+        //         display.innerHTML += angkanya2;
+        //     });
+        // }
 
     </script>
 </body>
